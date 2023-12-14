@@ -9,7 +9,3 @@ test('adds 1 to 2 equal 3', () => {
 test('subtrakts 3 minus 2 equal 1', () => {
   expect(calculator.sub(3, 2)).toBe(1)
 })
-
-test('fail', () => {
-  expect(calculator.sub(3, 2)).toBe(2)
-})
