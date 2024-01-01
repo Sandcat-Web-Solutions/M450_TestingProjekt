@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {testTrips} from "./api";
+import { getTrips } from "./api";
 
 
 // functional component ProductList, deconstruct props!
 function TripList({ addToWishlist }) {
   const [month, setMonth] = useState("");
-  const [trips] = useState(testTrips);
+  const [trips, setTrips] = useState([]);
   const months = ["Idle", "Jan", "Feb", "March", "April", "Mai", "June"];
 
   const tripsMapped = trips.map((trip, index) => (
@@ -23,6 +23,14 @@ function TripList({ addToWishlist }) {
   const filteredTrips = month
       ? trips.filter((t) => t.startTrip[1] === parseInt(month))
       : tripsMapped;
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getTrips();
+      setTrips(data);
+    }
+    getData();
+  }, [])
 
   return (
     <div className="container">
