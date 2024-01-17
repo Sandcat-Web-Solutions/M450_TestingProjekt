@@ -3,8 +3,8 @@ export const testTrips = [
         id: 1,
         title: "BT01",
         description: "San Francisco World Trade Center on new Server/IOT/Client002",
-        startTrip: [2021, 2, 13, 0, 0],
-        endTrip: [2021, 2, 15, 16, 56],
+        startTrip: "2021-02-13T00:00:00",
+        endTrip: "2021-02-15T16:56:00",
         meetings: [
             {
                 id: 1,
@@ -22,8 +22,8 @@ export const testTrips = [
         id: 2,
         title: "BT02",
         description: "Santa Clara Halley on new Server/IOT/Client",
-        startTrip: [2021, 6, 23, 9, 0],
-        endTrip: [2021, 6, 27, 16, 56],
+        startTrip: "2021-02-23T09:00:00",
+        endTrip: "2021-02-27T16:56:00",
         meetings: [
             {
                 id: 3,
@@ -41,8 +41,8 @@ export const testTrips = [
         id: 3,
         title: "BT03",
         description: "San Cose City Halley on Docker/IOT/Client",
-        startTrip: [2021, 12, 13, 9, 0],
-        endTrip: [2021, 12, 15, 16, 56],
+        startTrip: "2021-12-13T09:00:00",
+        endTrip: "2021-12-15T16:56:00",
         meetings: [
             {
                 id: 5,
