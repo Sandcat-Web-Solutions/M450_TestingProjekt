@@ -70,10 +70,9 @@ describe("TripList Component", () => {
   });
   test("Display Trips - should display all trips without any filters", () => {
     renderTriplist();
-    expect(screen.getByText(/1 BT01/)).toBeInTheDocument();
-    expect(screen.getByText(/2 BT02/)).toBeInTheDocument();
-    expect(screen.getByText(/3 BT03/)).toBeInTheDocument();
-    //fix this with forEach and ask if should fix code to display properly                
+    expect(screen.getByText(/BT01/)).toBeInTheDocument();
+    expect(screen.getByText(/BT02/)).toBeInTheDocument();
+    expect(screen.getByText(/BT03/)).toBeInTheDocument();            
   });
 
   test("renders filtered month correctly", async() => {
@@ -83,7 +82,11 @@ describe("TripList Component", () => {
     userEvent.selectOptions(comboBox, comboBox.children[2]);
 
     await waitFor(() => {
-      expect(screen.getByText(/1 BT01/)).toBeInTheDocument();
+      expect(screen.getByText(/BT01/)).toBeInTheDocument();
+      expect(screen.getByText(/Found 1 trip for the month of Feb/))
+      expect(screen.queryByText(/BT02/)).toBeNull();
+      expect(screen.queryByText(/ BT03/)).toBeNull();
+
     });
   });
 

@@ -17,6 +17,7 @@ describe("Wishlist Component", () => {
   });
 
   function renderWishlist() {
+    render(<Wishlist/>);
   }
 });
 

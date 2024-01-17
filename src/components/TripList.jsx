@@ -68,8 +68,8 @@ function TripList({ addToWishlist }) {
           </select>
           {month && (
             <h2>
-              Found {filteredTrips.length}
-              {filteredTrips.length >= 1 ? " trips" : " trip"} for the month of
+              Found {filteredTrips.length} 
+              {filteredTrips.length === 1 ? " trip" : " trips" /* changed trips to trip */} for the month of
               {" " + months[month]}
             </h2>
           )}
@@ -100,7 +100,7 @@ function Trip({ addToWishlist, ...props }) {
       <figure className="card card-product">
 
         <div className="img-wrap">
-          <img src={"images/items/" + trip.id + ".jpg"} alt="name " />
+          <img src={require(`../../public/images/items/${trip.id}.jpg`) /*fixed image import*/} alt="name " /> 
         </div>
         <figcaption className="info-wrap">
           <h6 className="title">
