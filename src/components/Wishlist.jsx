@@ -1,7 +1,7 @@
 import React, {} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // deconstruct props
-export default function Wishlist({ wishlist, removeFromWishlist, clearWishlist }) {
+export default function Wishlist({wishlist, removeFromWishlist, clearWishlist}) {
 
   // as constant variant 2
   const itemsMapped = wishlist.map((item, index) => (
@@ -31,42 +31,42 @@ export default function Wishlist({ wishlist, removeFromWishlist, clearWishlist }
             <div className="card table-responsive">
               <table className="table table-hover shopping-cart-wrap">
                 <thead className="text-muted">
-                  <tr>
-                    <th scope="col">Trip</th>
+                <tr>
+                  <th scope="col">Trip</th>
 
-                    <th scope="col" width="120">
-                      Price
-                    </th>
-                    <th scope="col" width="200" className="text-right">
-                      Action
-                    </th>
-                  </tr>
+                  <th scope="col" width="120">
+                    Price
+                  </th>
+                  <th scope="col" width="200" className="text-right">
+                    Action
+                  </th>
+                </tr>
                 </thead>
                 <tbody>{itemsMapped.length > 0 ? itemsMapped : empty}</tbody>
                 <tfoot>
-                  <tr>
+                <tr>
 
-                    <th scope="col">
-                      <dl className="dlist-align">
-                        <dt>Total </dt>
+                  <th scope="col">
+                    <dl className="dlist-align">
+                      <dt>Total</dt>
 
-                      </dl>
-                    </th>
-                    <th scope="col" />
-                    <th scope="col">
-                      <button
-                        //onClick={heartItem}
-                        className="btn btn-outline-success fa fa-heart fa-xs"
-                      />
-                      <button
-                        className="btn btn-outline-danger"
-                        onClick={clearWishlist}
-                        disabled={itemsMapped.length === 0}
-                      >
-                        empty wishlist
-                      </button>
-                    </th>
-                  </tr>
+                    </dl>
+                  </th>
+                  <th scope="col"/>
+                  <th scope="col">
+                    <button
+                      //onClick={heartItem}
+                      className="btn btn-outline-success fa fa-heart fa-xs"
+                    />
+                    <button
+                      className="btn btn-outline-danger"
+                      onClick={clearWishlist}
+                      disabled={itemsMapped.length === 0}
+                    >
+                      empty wishlist
+                    </button>
+                  </th>
+                </tr>
                 </tfoot>
               </table>
             </div>
@@ -79,9 +79,9 @@ export default function Wishlist({ wishlist, removeFromWishlist, clearWishlist }
 
 function WishlistItem(props) {
   // deconstruct props
-  const { removeFromWishlist, item } = props;
+  const {removeFromWishlist, item} = props;
   // props
-  let { id, title, description, startTrip, endTrip } = item;
+  let {id, title, description, startTrip, endTrip} = item;
 
 
   // console.log("WishlistItem", item);
@@ -112,14 +112,14 @@ function WishlistItem(props) {
       </td>
       <td className="price-wrap price"></td>
       <td className="text-right">
-        <button className="btn btn-outline-success fa fa-heart fa-xs" />
+        <button className="btn btn-outline-success fa fa-heart fa-xs"/>
         <i className="fa-regular fa-heart"></i>
         <button
           className="btn btn-outline-danger"
-          // onClick={ () => removeFromWishlist(props.item) } // App deleteItem
+          // onClick={ () => removeFromWishlist(props.item.id) } // App deleteItem
 
 
-            onClick={() => removeFromWishlist(item)}
+          onClick={() => removeFromWishlist(item)}
         >
           delete Item
         </button>
