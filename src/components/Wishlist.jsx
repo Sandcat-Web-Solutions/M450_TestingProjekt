@@ -57,10 +57,7 @@
                     </th>
                     <th scope="col"/>
                     <th scope="col">
-                      <button
-                        //onClick={heartItem}
-                        className="btn btn-outline-success fa fa-heart fa-xs"
-                      />
+                      {/*removed useless button*/}
                       <button
                         className="btn btn-outline-danger"
                         onClick={clearWishlist}
@@ -114,7 +111,7 @@
         </td>
         <td className="price-wrap price"></td>
         <td className="text-right">
-          <button className="btn btn-outline-success fa fa-heart fa-xs"/>
+          {/*removed useless button */}
           <i className="fa-regular fa-heart"></i>
           <button
             className="btn btn-outline-danger"
