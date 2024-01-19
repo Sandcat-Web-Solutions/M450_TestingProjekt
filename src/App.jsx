@@ -37,7 +37,7 @@ export default function App() {
 
   // if month selected then filter the trips from month === month
 
-  // if error then throw the errror
+  // if error then throw the error
 
   // shorthand for react fragment
   return (<>

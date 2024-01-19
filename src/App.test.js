@@ -1,5 +1,7 @@
-import {logRoles, render, screen} from "@testing-library/react";
+import { logRoles, render, screen } from "@testing-library/react";
 import App from "./App";
+import Wishlist from "./components/Wishlist";
+import TripList from "./components/TripList";
 //import useFetch from "./services/useFetch";
 //import {getBusinessTrips} from "./services/tripsService";
 /*it("ret without crashing", () => {
@@ -52,14 +54,13 @@ import App from "./App";
 // });
 
 //----
-const sum = function sum(a, b) {
-  return a + b;
-};
-test("adds 1 + 2 to equal 3", () => {
-  expect(sum(1, 2)).toBe(3);
-});
 
-//----
-test("two plus two is four", () => {
-  expect(2 + 2).toBe(4);
+
+describe("App component", () => {
+  test("Renders Wishlist and Triplist", () => {
+    render(<App/>);
+    expect(screen.getByText(/Welcome to biztrips 2024/)).toBeInTheDocument();
+    expect(screen.getByText(/Triplist-Catalog/)).toBeInTheDocument();
+    expect(screen.getByText(/Wishlist is empty/)).toBeInTheDocument();
+  })
 });

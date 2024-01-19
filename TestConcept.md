@@ -113,10 +113,3 @@ The frontend contains both react components and javascript exported modules that
 ### Resolution
 - The code related to the eg. failed test case will be fixed. The test will run again after
 - continuous attemting to fix the code until the test passes
-
-
-
-
-
-
-

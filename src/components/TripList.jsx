@@ -103,8 +103,15 @@ function Trip({ addToWishlist, ...props }) {
           <img src={require(`../../public/images/items/${trip.id}.jpg`) /*fixed image import*/} alt="name " /> 
         </div>
         <figcaption className="info-wrap">
-          <h6 className="title">
-            {id}  {title} {trip.startTrip} {trip.endTrip}
+          {/*changed appearance of the trip to be readable */}
+          <h5 className="title">
+              {title}
+          </h5>
+          <h6>
+            Starts: {new Date(trip.startTrip).toLocaleString()}
+          </h6>
+          <h6>
+            Ends: {new Date(trip.endTrip).toLocaleString()}
           </h6>
 
           <p className="card-text">{description}</p>

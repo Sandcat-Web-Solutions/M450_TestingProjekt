@@ -72,10 +72,10 @@ describe("TripList Component", () => {
     renderTriplist();
     expect(screen.getByText(/BT01/)).toBeInTheDocument();
     expect(screen.getByText(/BT02/)).toBeInTheDocument();
-    expect(screen.getByText(/BT03/)).toBeInTheDocument();            
+    expect(screen.getByText(/BT03/)).toBeInTheDocument();
   });
 
-  test("renders filtered month correctly", async() => {
+  test("renders filtered month correctly", async () => {
     renderTriplist();
     const comboBox = screen.getByRole("combobox");
     expect(comboBox).toBeInTheDocument();
@@ -86,13 +86,43 @@ describe("TripList Component", () => {
       expect(screen.getByText(/Found 1 trip for the month of Feb/))
       expect(screen.queryByText(/BT02/)).toBeNull();
       expect(screen.queryByText(/ BT03/)).toBeNull();
-
     });
   });
 
+  test('addToWishlist adds a trip to the wishlist', async () => {
+    renderTriplist();
+  
+    const addToWishlistButtons = screen.getAllByText(/Add to Wishlist/);
+  
+    userEvent.click(addToWishlistButtons[0]);
+  
+    await waitFor(() => {
+      expect(mockAddToWishlist).toHaveBeenCalledWith({
+        id: 1,
+        title: "BT01",
+        description: "San Francisco World Trade Center on new Server/IOT/Client002",
+        startTrip: "2021-02-13T00:00:00",
+        endTrip: "2021-02-15T16:56:00",
+        meetings: [
+          {
+            id: 1,
+            title: "One Conference",
+            description: "Key Note on One Conference",
+          },
+          {
+            id: 2,
+            title: "Zero Conference",
+            description: "Workshop Zero on One Conference",
+          },
+        ],
+      });
+    });
+  });
+  
   function renderTriplist() {
     render(<TripList addToWishlist={mockAddToWishlist} />);
   }
+  
 
 });
 
