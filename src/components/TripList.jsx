@@ -92,7 +92,7 @@ function TripList({ addToWishlist }) {
 function Trip({ addToWishlist, ...props }) {
   // Props
   let { trip } = props;
-  let { id, title, description, } = trip;
+  let { title, description, } = trip;
 
 
   return (
